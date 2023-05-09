@@ -6,7 +6,7 @@ function HomeScreen() {
   return (
     <div>
         <h1>
-            Latest Products
+            Latest Products ({(products.length)})
             <Row>
               {products.map(product=>(
                 <Col key={product._id} sm={12} md={6} lg={4} xl={3}>
