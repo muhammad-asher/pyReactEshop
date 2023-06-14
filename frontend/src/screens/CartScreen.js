@@ -3,7 +3,7 @@ import { useEffect } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 import { Link, useParams } from 'react-router-dom'
 import { Row,Col, ListGroup, Image,Form ,Button, Card } from 'react-bootstrap'
-import { addToCart } from '../actions/cartActions'
+import { addToCart, removeFromCart } from '../actions/cartActions'
 import Message from '../components/Message'
 
 const CartScreen = () => {
@@ -29,11 +29,12 @@ const CartScreen = () => {
 
 
   const removeFromCartHandler = (id) => {
-      console.log("Remove",id)
+    dispatch(removeFromCart(id))
+      // console.log("Remove",id)
   }
 
   const checkouthandler = () => {
-    window.location.href = `/cart/${id}?qty=${qty}`
+    window.location.href = `/login?redirect=shipping`
   }
 
   return ( 
